@@ -2,10 +2,19 @@
 #include <string>//引入字符串库
 using namespace std;
 int main() {
-	string first = "hanna";
+	string first = "Hanna";
 	string last = "Geo";
-	string full = first.append(last);
-	cout << full;
+	string full = first + " " + last;
+	cout << full << endl;
+	
+	string full1 = first + last;
+	string full2 = first.append(last);
+	//这一步把 first 变成 "hannaGeo"
+	//.append() 方法会修改原来的字符串对象 first，将 last 追加到 first 的末尾。
+	string full3 = first + " " + last;
+	cout << full1 << endl;//HannaGeo
+	cout << full2 << endl;//HannaGeo
+	cout << full3 << endl;//HannaGeo Geo
 
-		return 0;
+	return 0;
 }
