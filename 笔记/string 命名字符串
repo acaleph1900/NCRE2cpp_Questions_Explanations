@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string>//引入字符串库
 using namespace std;
 int main() {
 	string first = "hanna";
