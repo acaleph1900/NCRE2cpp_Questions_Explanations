@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int a = 5, b = 2;
+	cout << a + b << endl; //=7，加法
+	cout << a - b << endl; //=3，减法
+	cout << a * b << endl; //=10，乘法
+	cout << a / b << endl; //=2，除法
+	cout << a % b << endl; //=1，取余
+
+	cout << a++ << endl; //=5，先输出a=5，再自增a=6
+	cout << ++a << endl; //=7，（此时a=6）先自增a=7，再输出a=7
+	
+		return 0;
+}
