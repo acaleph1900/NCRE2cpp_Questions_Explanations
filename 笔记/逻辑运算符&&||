@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	cout << (true && true) << endl;//1
+	cout << (true && false) << endl;//0
+	cout << (true || true) << endl;//1
+	cout << (true || false) << endl;//1
+	cout << (false || false) << endl;//0
+
+	//&&，与，皆真为真
+	//|| 或，任一真为真
+
+		return 0;
+}
