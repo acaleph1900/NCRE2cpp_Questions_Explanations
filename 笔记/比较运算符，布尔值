@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int a = 5, b = 2;
+	
+	cout << (a == b) << endl;//0，判断a是否等于b
+	cout << (a != b) << endl;//1，判断a是否不等于b
+	cout << (a > b) << endl;//1，判断a是否大于b
+	cout << (a < b) << endl;//0，判断a是否小于b
+	cout << (a >= b) << endl;//1，判断a是否大于等于b
+	cout << (a <= b) << endl;//0，判断a是否小于等于b
+	//1为true，0为false，返回的都是布尔值
+	//括号把 a == b 作为一个整体表达式先计算
+	//结果类型为 bool（true/false）
+	
+	//如果写成 cout << a == b，会被解析为 (cout << a) == b
+	// 因为<< 的优先级高于 ==
+	// 括号避免了歧义
+
+	//默认显示为 1/0，若想显示 true/false，使用 std::boolalpha
+	cout<<std::boolalpha <<( a <= b)<< endl;//false
+
+		return 0;
+}
