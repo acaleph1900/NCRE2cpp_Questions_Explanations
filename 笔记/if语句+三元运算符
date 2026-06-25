@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int age;
+	cout << "输入你的年龄：";
+	cin >> age;
+	if (age>=60)
+	{
+		cout << "你是（高龄）成年人" << endl;
+	}
+	else if (age>=18)
+	{
+		cout << "你是成年人" << endl;
+	}
+	else
+	{
+		cout << "你是未成年人" << endl;
+	}
+
+	//
+	int age2;
+	cout << "输入你的年龄2：";
+	cin >> age2;
+	string result = (age2 >= 18) ? "成年人" : "未成年人";// 三元运算符
+	//结果为true，输出前面的字符串，否则输出后面的字符串
+	cout << result << endl;
+
+	return 0;
+}
