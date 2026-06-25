@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>//引数学库
+using namespace std;
+int main() {
+	cout << max(3,6 ) << endl; //=6，输出最大值
+	cout << min(3, 6) << endl; //=3，输出最小值
+	cout << sqrt(9) << endl; //=3，输出平方根
+	
+	cout << round(9.8) << endl; //=10，输出四舍五入
+	cout << ceil(9.1) << endl; //=10，输出向上取整
+	cout << floor(9.9) << endl; //=9，输出向下取整
+	
+	cout << pow(2, 3) << endl; //=8，输出2的3次方
+	cout << abs(-9) << endl; //=9，输出绝对值
+	cout << log(2) << endl; //=0.693147，输出自然对数
+	cout << fmod(9.9, 2.5) << endl; //=1.4，输出取余数
+	
+	//三角函数
+	cout << sin(3.1415926 / 2) << endl; //=1，输出正弦值
+	cout << cos(3.1415926) << endl; //=-1，输出余弦值
+	cout << tan(3.1415926 / 4) << endl; //=1，输出正切值
+	cout << asin(1) << endl; //=1.5708，输出反正弦值
+
+	return 0;
+}
