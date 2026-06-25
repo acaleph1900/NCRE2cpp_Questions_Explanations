@@ -1,0 +1,50 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	int day ;
+	cout << "请输入一个数字（1-7）表示星期几：";
+	cin >> day;
+	
+	switch (day) {
+	
+//case 后面的数字必须是常量表达式，如 1、2、3 ，1+2、3*4 等
+// 不能是变量或表达式，x、y 等
+	case 1://输入的数字是1
+		cout << "周一";
+			break;
+		
+	case 2://输入的数字是2
+			cout << "周二";
+			break;
+
+		case 3://同上
+			cout << "周三";
+			break;
+	
+		case 4:
+			cout << "周四";
+			break;
+	
+		case 5:
+			cout << "周五";
+			break;
+
+		case 6:
+			cout << "周六";
+			break;
+
+		case 7:
+			cout << "周日";
+			break;
+		
+		default://都不符合以上的情况
+			cout << "无效数字";
+	}
+	
+	//case 后面的 break 语句是可选的
+	// 若省略了 break 语句，程序会继续执行下一个 case 的代码
+	// 直到遇到 break 或者 switch 语句结束
+
+	return 0;
+}
