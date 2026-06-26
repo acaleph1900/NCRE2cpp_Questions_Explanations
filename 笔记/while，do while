@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a = 1;
+	while (a <= 6)
+	{
+		cout << a << endl;
+		a ++;
+	}//输出为1，2，3，4，5，6
+
+	a  = 5;
+	do
+	{
+		cout << a << endl;;
+		a++;
+	} while (a <=8);
+	//输出为5，6，7，8
+
+	return 0;
+}
