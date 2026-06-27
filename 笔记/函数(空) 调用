@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void function() //括号内可以添加参数，后面不加分号
+{ //函数体
+	cout << "一个函数" << endl;
+}
+void function2();	//要加分号
+//函数声明，告诉编译器这个函数存在，后面会有定义
+
+//这两个函数是一个没有参数和返回值的函数，做了一个简单的输出
+
+int main()
+{
+	function();
+	function2();
+	//调用函数
+	return 0;
+}
+
+void function2() //函数定义
+{
+	cout << "另一个函数" << endl;
+}
