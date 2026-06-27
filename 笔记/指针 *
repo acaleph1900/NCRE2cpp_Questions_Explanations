@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string a = "一个数值";
+	string* b = &a;
+	// b的类型是string*（指针）
+	//b的值是a的地址
+	// //b的地址与a的地址不同
+	//通过 *b 访问或修改 a 的对象
+	//此时b是一个指针，指向a的地址
+
+	cout << "b的值是: " << b << endl;
+	//b表示指针变量b的值，也就是它所存放的地址
+	cout << "b的地址是: " << &b << endl;
+	//b的地址，是指针变量b在内存中的地址
+	cout << *b << endl;
+	// *b表示指针变量b所指向的对象，也就是a的值
+
+	*b = "修改后的数值";
+	cout << "修改后的a的值是: " << a << endl;
+	//通过*b修改了a的值，因为b指向a的地址
+
+	return 0;
+}
