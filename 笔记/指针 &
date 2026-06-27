@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string a = "一个数值";
+	//string b = a;表示b是a的副本，b和a的地址不同
+	string& b = a;//&表示取地址
+	
+	cout << "a的地址是：" << &a << endl;
+	cout << "b的地址是：" << &b << endl;	
+	//b并不是一个新的变量，也不是一个指针
+	//b是a的别名，b和a的地址相同
+	
+	cout << "a的值是：" << a << endl;
+	cout << "b的值是：" << b << endl;
+	//读写 b 就是读写 a，内容总是一致的。
+
+	return 0;
+}
