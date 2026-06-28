@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void function(string name) // 定义一个函数，参数为字符串类型的name
+{ 
+	cout << name << endl;
+}
+
+void function2(string name2 = "默认姓名")// 参数默认值为"默认姓名"
+{
+	cout << name2 << endl;
+}
+
+int main()
+{
+	function("张三");
+	function("李四");
+	
+	function2("王五");
+	function2();// 调用不传参数时，使用默认值
+	return 0;
+}
