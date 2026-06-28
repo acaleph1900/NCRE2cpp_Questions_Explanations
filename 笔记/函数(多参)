@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+void function(string name, int age) // 多个参数，逗号分隔
+{ 
+	cout << name << "is " << age << " years old." << endl;
+}
+
+int function2(int a, int b)
+//void 表示不返回任何值，不能写 return a + b
+//int 表示返回一个整数值，可以写 return a + b
+{
+	return a + b;
+}
+
+int main()
+{
+	function("张三", 15);
+	cout <<function2(1, 2) << endl;
+	int result = function2(1, 2);
+	cout << "The result is: " << result << endl;
+
+	return 0;
+}
+//return 表示函数把一个值返回给调用者，并结束函数。
+// 需要逻辑、结果被复用、单元测试或组合时用 return
+
+//cout 是输出操作，把文本写到标准输出，会把值传回给调用者
+// 为了展示、日志或交互时用 cout
