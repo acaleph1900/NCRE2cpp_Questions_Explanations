@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+void swap(int a, int b)//值传递
+{//（创建副本）
+	int c = a;//将a的值赋给c
+	//此时c保留了a的原始值
+	//（副本a的值）
+	a = b;//将b的值赋给a
+	//a的值被修改为b的值
+	//（只修改了副本a）
+	b = c;//将c的值赋给b
+	//（只修改了副本b）
+}
+// 函数内修改不会影响原变量
+//（函数结束，副本ab被摧毁）
+//额外分配内存
+
+void swap2(int &	a, int &b)// 引用传递
+{//（不创建副本）
+	int c = a;
+	a = b;
+	b = c;
+}
+//函数内修改原变量
+//共用原内存
+
+int main()
+{
+	int num1 = 5;
+	int num2 = 10;
+	cout << "before swap: num1 = " << num1 << ", num2 = " << num2 << endl; 
+	swap(num1, num2);
+	cout << "after swap: num1 = " << num1 << ", num2 = " << num2 << endl;	
+	
+	swap2(num1, num2);
+	cout << "after swap: num1 = " << num1 << ", num2 = " << num2 << endl;
+
+	return 0;
+}
