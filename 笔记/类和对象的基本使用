@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class name {//用class定义一个类
+public://访问
+	string firstname;
+	string lastname;
+	int number;
+	//在类中的变量叫做成员变量
+};
+
+int main() {
+	name person1;
+	name person2;
+	//声明一个类的对象，类名字+对象名字
+
+	person1.firstname = "Hanna";
+	person1.lastname = "Geo";
+	person2.number = 222;
+	//使用对象名.成员变量名，来访问类中的成员变量
+	//类不能直接访问成员变量，必须通过对象来访问
+	//类只是一个模板，定义对象之后才被分配内存空间
+
+	cout << person1.firstname << " " << person2.number<< endl;
+
+	return 0;
+}
