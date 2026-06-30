@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class A //基类A
+{
+public:
+	A() { cout << "A"; }//构造函数
+	//【执行输出A】
+	~A() { cout << "~A"; }//析构函数，~ 加在类名之前
+    //在每次删除对象时执行
+	//析构函数的作用是释放对象占用的资源，清理内存，关闭文件等操作
+	//不返回任何值，也不能接受任何参数
+};
+class B :public A //派生类B
+{
+	A* p;//指针p指向A类对象
+public:
+	B() { cout << "B"; p = new A(); }//【执行输出B】
+	//在堆上创建一个A类对象，将其地址赋值给指针p
+	//（new 是动态内存分配的关键字）
+	//然后执行 p = new A() 
+	// 再次调用A的构造函数，【输出 A】
+	~B() { cout << "~B"; delete p; }//【执行输出~B】
+	//删除p
+	//触发析构链，输出~A
+};
+int main()
+{
+	B obj;//创建B类对象obj，调用B的构造函数
+	//输出结果为：ABA
+    return 0;//程序结束，obj对象被销毁
+}
+// 自动销毁基类A，输出~A
+
+/*
+执行这个程序的输出结果是______。
+BAA～A～B～A
+
+ABA～B～A～A 
+
+BAA～B～A～A
+
+ABA～A～B～A
+
+
+答案：ABA~B~A~A
+*/
+
+
+
