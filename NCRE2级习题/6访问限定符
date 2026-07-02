@@ -14,13 +14,16 @@ C. 1个
 D. 2个
 答案：
 解析：
-权限访问限定符，针对类外
-public          公有      类内，类外都能访问
-private         私有                类外不能访问
-protected     保护                类外不能访问，类内，子类可以访问
+错误1：～myclass();析构函数应该与类名相同，包括大小写。修改为：
+～Myclass()
 
-一般来说：
-数据成员，private
-成员函数，public
+错误2：MyClass(int a):data(a);在类中声明构造函数时不能带成员初始化表并以分号结束。
+要么只声明： MyClass(int a); 要么在类内定义并写函数体： MyClass(int a) : data(a) { }。
+
+错误3：int data(0);类成员变量不能在声明的地方进行初始化，应该在初始化列表进行，更好的写法是：
+private:
+    int data = 0; 
+//或者：
+    int data{0}; 
 
 */ 
