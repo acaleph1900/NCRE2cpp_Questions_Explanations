@@ -1,1 +1,67 @@
-。。
+/*
+情景：
+假设有一个人，他的性别公开可知（public）
+生日不公开（private）
+姓名受保护（protected），仅内部可知
+*/
+#include <iostream>
+#include <string>
+using namespace std;
+
+class thePerson
+{
+private:
+	string name; // 姓名不可知
+public:
+	string gender;// 性别公开可知
+protected:
+	string birthday; // 生日不公开
+
+public://限定符不限数量
+	void setAll(string a_name, string a_birthday, string a_gender)//名称不与类名相同，避免歧义
+	{	// 通过setAll函数赋值，创建接口
+		name = a_name;
+		birthday = a_birthday;
+		gender = a_gender;
+	}
+	const string& getBirthday() const//创建公有函数来访问私有属性，返回值为引用
+	{//写法1，加&，返回引用
+	//前 const作用是禁止通过返回值修改原始数据
+	//后 const作用是承诺不修改对象
+	//两个都可以不加，但加上更安全
+		return  birthday;// 返回birthday 本身的引用，而不是副本
+	}
+	string& getName() //同上，二者不公开
+	{
+		return  name; 
+	}
+};
+
+/*写法2：不加 &
+string getName() const
+{ // 传值返回 ，创建副本
+	return name; //复制一份 name 返回
+}
+略，若在main函数中：
+ string n1 = p.getName1();
+	n1 = "Jerry"; // 只改了副本，不影响原对象
+	cout << p.getName1();   // 仍然输出 "Tom"
+	//而写法1能够直接修改原对象的属性，输出Jerry
+*/
+
+int main()
+{
+	thePerson A;// 创建一个对象A
+	A.gender = "male";// gender公开，给对象A的gender赋值
+	cout << A.gender << endl;
+
+	//A.name = "Tom"; 错误
+	//A.birthday = "10.10";错误
+	//以上二者不可赋值，只能通过setAll函数赋值
+	
+	A.setAll("Tom", "10.10", "male");
+	
+	cout << A.getBirthday() << endl; 
+	cout << A.getName() << endl; 
+	return 0;
+}
