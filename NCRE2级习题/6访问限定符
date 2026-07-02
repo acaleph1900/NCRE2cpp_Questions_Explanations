@@ -1,1 +1,26 @@
-，，
+//有如下类定义:
+class MyClass {
+private:
+    int data(0);
+public:
+    MyClass();
+    MyClass(int a) :data(a);
+    ～myclass();
+};
+/*编译时会产生错误的语句个数是______。
+A. 3个
+B. 0个
+C. 1个
+D. 2个
+答案：
+解析：
+权限访问限定符，针对类外
+public          公有      类内，类外都能访问
+private         私有                类外不能访问
+protected     保护                类外不能访问，类内，子类可以访问
+
+一般来说：
+数据成员，private
+成员函数，public
+
+*/ 
