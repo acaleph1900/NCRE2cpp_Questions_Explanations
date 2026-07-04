@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+class A {
+public:
+	virtual void func1() { cout << "A1"; }//虚函数
+    void func2() { cout << "A2"; }
+};
+class B :public A { //派生类B由基类A公有继承而来
+public:
+	void func1() { cout << "B1"; } //虚函数。基类中用 virtual声明
+	//派生类中同名同参的函数自动成为虚函数的重写
+	void func2() { cout << "B2"; }//非虚函数。基类中没有 virtual
+};
+int main() {
+    A* p = new B; // 基类指针指向派生类对象
+	p->func1();// 调用的是派生类B的func1()，输出B1
+	//依据对象的实际类型来动态绑定，调用派生类的版本，这里是 B
+	//所以 p->func1()调用的是 B::func1()，输出 B1
+
+	p->func2();// 调用的是基类A的func2()，输出A2
+	//根据指针的静态类型来决定调用哪个版本，这里是 A*
+	//所以 p->func2()调用的是 A::func2()，输出 A2
+    return 0;
+}
+/*运行此程序，屏幕上将显示输出______。
+A. B1B2
+B. A1A2
+C. B1A2
+D. A1B2
+
+答案：C
+解析：本题考查的是派生类
+派生类B由基类A公有继承而来
+调用p->func1();后，执行派生类B的函数void func1()
+调用p->func2();后，执行基类的函数void func2()
+因为虚拟函数是根据对象的实际类型调用，非虚拟函数是根据指针类型调用
+所以通过指针p调用func2时将直接调用基类中的void func2()
+
+*/
