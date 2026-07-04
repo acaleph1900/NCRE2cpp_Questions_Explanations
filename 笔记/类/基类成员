@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+/*基类成员
+作用：
+提供继承的基础属性和行为。派生类通过继承获得基类的所有非私有成员（构造函数、析构函数、赋值运算符除外）。
+初始化顺序。先调用基类构造函数，再初始化其他成员。*/
+
+//示例：
+class base { //创建一个基类，名字为 base
+public:
+	int a;
+	base(int x) :a(x) //构造一个函数，base是类名，也是构造函数的名字
+	{
+		cout << "base constructor" << endl;
+	}
+};
+//int x 表示这个构造函数接受一个 int类型的参数 x
+		//a(x) 表示初始化列表，作用是在构造函数体执行之前，用参数 x来初始化成员变量a
+
+		//为什么不写成 int a = x；？
+		// ：a(x) 是初始化，成员在创建时直接被赋予值。先分配内存，再赋值
+		// int a = x 是赋值，成员在创建后先被默认初始化，然后再被赋值。先分配内存，默认初始化，再赋值
+	
+int main() {
+	base b(10); //创建一个 base类的对象 b，并传入参数 10
+	cout << "b.a = " << b.a << endl; //输出 b.a 的值
+	return 0;
+}
