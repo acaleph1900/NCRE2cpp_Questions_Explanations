@@ -1,0 +1,19 @@
+有如下语句序列：
+class MyBase{
+public:
+  virtual void func1(){ }    //①
+  void func2(){ }            //②
+};
+class MyDerived : public MyBase{
+public:
+  void func1(){ cout<<"func1"<<endl; }  //③
+  virtual void func2(){ cout<<"fun2"<<endl; } //④
+};
+下列叙述中，正确的是______。
+①②③④所在行中的函数为虚函数
+
+②④所在行中的函数为虚函数
+
+①②④所在行中的函数为虚函数
+
+①③④所在行中的函数为虚函数
