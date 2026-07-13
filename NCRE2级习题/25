@@ -1,0 +1,14 @@
+有如下类定义：
+class Test {
+public:
+    int x;
+    void fun();
+};
+若有语句"Test obj1,*obj2;"，则下列选项中，访问obj1对象和obj2所指对象成员格式错误的是______。
+obj1.fun()和obj2->fun()
+
+obj1.fun()和(*obj2).fun()
+
+obj1.x和obj2->x
+
+obj1.fun和obj2->fun
